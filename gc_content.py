@@ -6,7 +6,7 @@ gene = raw_input('Enter the file name please: ')
 try:
     fname = open(gene,'r')
 except:
-    print 'The file',gene,'coult not be found'
+    print 'The file',gene,'could not be found'
     exit()
     
 # Set g a c t values to initialize at 0
