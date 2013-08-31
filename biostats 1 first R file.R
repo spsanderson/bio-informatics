@@ -10,7 +10,7 @@ min(x)
 # This gets the maximum of x
 max(x)
 
-# This gets the meanof x
+# This gets the mean of x
 mean(x)
 
 # This gets the median of x
@@ -18,3 +18,6 @@ median(x)
 
 # This gets the standard deviation of x
 sd(x)
+
+# Plot the CD$ T Cell values
+plot(x, xlab="Index", ylab="Cell Counts", main="Plot of CD4 T Cell Counts")
