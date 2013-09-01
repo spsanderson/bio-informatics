@@ -8,7 +8,7 @@ hist(serzinc$zinc, xlab="Zinc Levels", main="Histogram of Zinc Levels")
 
 # Cut serzinc data into intervals, 10 points per interval and then plot the histogram
 serzinc_interval <- cut(serzinc$zinc, 10)
-plot(serzinc_interval, xlab='Intervals', ylab="Count in Interval", 
+plot(serzinc_interval, xlab='Intervals', ylab="Count in Interval",
      main="Zinc Level Data in 10 Intervals")
 
 # Get a table of the relative frequencies
@@ -35,16 +35,45 @@ lowbwt_rf
 # 18 nursehome, state and residents
 nursehome <- read.csv("~/bio-informatics/Bio-stats HW 1/nurshome.csv")
 summary(nursehome)
-plot(nursehome$resident, ylab="Resident Levels", main="Point Plot of Nursing Home Resident data")
-hist(nursehome$resident, xlab="Resident Levels", main="Histogram of Nursing Home Resident data")
+plot(nursehome$resident, ylab="Resident Levels",
+     main="Point Plot of Nursing Home Resident data")
+
+hist(nursehome$resident, xlab="Resident Levels",
+     main="Histogram of Nursing Home Resident data")
+
 boxplot(nursehome$resident, main="Boxplot of Nursing Home Resident data")
 
 # Cut nursehome data into intervals, 10 wide per interval then plot histogram
 nursehome_interval <- cut(nursehome$resident, 10)
-plot(nursehome_interval, xlab="Intervals", ylab="Count in Interval",
+plot(nursehome_interval, xlab="Intervals", ylab="Count in Interval", 
      main="Nursing Home Resident Data in 10 Intervals")
 
 # Get a table of the relative frequencies
 nursehome_rf <- table(nursehome_interval)
 nursehome_rf
+max(nursehome)
 
+# 19 use data set called cigarett, work with vars tar and nicotine
+cigarette <- read.csv("~/bio-informatics/Bio-stats HW 1/cigarett.csv")
+summary(cigarette)
+plot(cigarette$tar, ylab="Tar Levels", main="Tar Levels in Cigarettes data")
+
+plot(cigarette$nicotine, ylab="Nicotine Levels", main="Nicotine Levels in Cigarettes data")
+
+hist(cigarette$tar, xlab="Tar Levels", main="Histogram of Tar Levels in Cigarettes")
+
+hist(cigarette$nicotine, xlab="Nicotine Levels", 
+     main="Histogram of Nicotine Levels in Cigarettes")
+
+boxplot(cigarette$tar, main="Boxplot of Tar Levels in Cigarettes")
+
+boxplot(cigarette$nicotine, main="Boxplot of Nicotine Levels in Cigarettes")
+
+# Cut cigarette data into intervals, 10 wide per interval then plot histogram
+tar_interval <- cut(cigarette$tar, 10)
+nicotine_interval <- cut(cigarette$nicotine, 10)
+plot(tar_interval, xlab="Intervals", ylab="Count In Interval", 
+     main="Histogram of Tar Interval Data")
+
+plot(nicotine_interval, xlab="Intervals", ylab="Count In Interval", 
+     main="Histogram of Nicotine Interval Data")
