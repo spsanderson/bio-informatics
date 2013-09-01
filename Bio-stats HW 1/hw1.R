@@ -33,4 +33,17 @@ lowbwt_rl_freq <- table(lowbwt_interval)
 lowbwt_rl_freq
 
 # 18 nursehome, state and residents
-nursehome <- as.numeric(do.call("rbind", sapply("nursehome.csv", read.csv)))
+nursehome <- as.numeric(do.call("rbind", sapply("nurshome.csv", read.csv)))
+summary(nursehome)
+plot(nursehome, main="Point Plot of nursehome data")
+hist(nursehome, main="Histogram of nursehome data")
+boxplot(nursehome, main="Boxplot of nursehome data")
+
+# Cut nursehome data into intervals, 10 wide per interval then plot histogram
+nursehome_interval <- cut(nursehome, 10)
+plot(nursehome_interval, xlab="Intervals", ylab="Count in Interval",
+     main="Nursehome Data in 10 Intervals")
+
+# Get a table of the relative frequencies
+nursehome_rl_freq <- table(nursehome_interval)
+nursehome_rl_freq
