@@ -77,3 +77,5 @@ plot(tar_interval, xlab="Intervals", ylab="Count In Interval",
 
 plot(nicotine_interval, xlab="Intervals", ylab="Count In Interval", 
      main="Histogram of Nicotine Interval Data")
+plot(cigarette$tar ~ cigarette$nicotine, xlab="Nicotine Level", ylab="Tar Level", 
+     main="Two-Way Scatter Plot of Tar ~ Nicotine Data")
