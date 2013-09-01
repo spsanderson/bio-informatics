@@ -31,3 +31,6 @@ plot(lowbwt_interval, xlab="Intervals", ylab='Count in Interval',
 # Get a table of the relative frequencies
 lowbwt_rl_freq <- table(lowbwt_interval)
 lowbwt_rl_freq
+
+# 18 nursehome, state and residents
+nursehome <- as.numeric(do.call("rbind", sapply("nursehome.csv", read.csv)))
