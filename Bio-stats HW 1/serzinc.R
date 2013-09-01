@@ -2,3 +2,5 @@
 # and that you have it loaded into your workspace, this file was created using RSTudio
 serzinc <- as.numeric(do.call("rbind", sapply("serzinc.csv", read.csv)))
 summary(serzinc)
+plot(serzinc, main="Point Plot of serzinc data")
+hist(serzinc, main="Histogram of serzinc data")
