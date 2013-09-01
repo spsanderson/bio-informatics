@@ -1,49 +1,50 @@
 # This script assumes you have the necessary data file loaded into the current directory
 # and that you have it loaded into your workspace, this file was created using RStudio
 # Problem 1
-serzinc <- as.numeric(do.call("rbind", sapply("serzinc.csv", read.csv)))
+serzinc <- read.csv("~/bio-informatics/Bio-stats HW 1/serzinc.csv")
 summary(serzinc)
-plot(serzinc, main="Point Plot of serzinc data")
-hist(serzinc, main="Histogram of serzinc data")
+plot(serzinc$zinc, ylab="Zinc Levels", main="Point Plot of serzinc data")
+hist(serzinc$zinc, xlab="Zinc Levels", main="Histogram of serzinc data")
 
 # Cut serzinc data into intervals, 10 points per interval and then plot the histogram
-serzinc_interval <- cut(serzinc, 10)
+serzinc_interval <- cut(serzinc$zinc, 10)
 plot(serzinc_interval, xlab='Intervals', ylab="Count in Interval", 
      main="Serzinc Data in 10 Intervals")
 
 # Get a table of the relative frequencies
-sz_rel_freq <- table(serzinc_interval)
-sz_rel_freq
+sz_rf <- table(serzinc_interval)
+sz_rf
 
 # 17 lowbwt
 # sex 1=male, tox 1=toxemia, grmhem 1=hemorrhage
-lowbwt <- as.numeric(do.call("rbind", sapply("lowbwt.csv", read.csv)))
+lowbwt <- read.csv("~/bio-informatics/Bio-stats HW 1/lowbwt.csv")
 summary(lowbwt)
-plot(lowbwt, main="Point Plot of lowbwt data")
-hist(lowbwt, main="Histogram of lowbwt data")
-boxplot(lowbwt, main="Boxplot of lowbwt data")
+plot(lowbwt$lowbwt, main="Point Plot of Low Birth Weight")
+hist(lowbwt$lowbwt, main="Histogram of Low Birth Weight Data")
+boxplot(lowbwt$lowbwt, main="Boxplot of Low Birth Weight data")
 
 # Cut lowbwt data into intervals, 10 wide per interval then plot histogram
-lowbwt_interval <- cut(lowbwt, 10)
+lowbwt_interval <- cut(lowbwt$lowbwt, 10)
 plot(lowbwt_interval, xlab="Intervals", ylab='Count in Interval',
      main="Lowbwt Data in 10 Intervals")
 
 # Get a table of the relative frequencies
-lowbwt_rl_freq <- table(lowbwt_interval)
-lowbwt_rl_freq
+lowbwt_rf <- table(lowbwt_interval)
+lowbwt_rf
 
 # 18 nursehome, state and residents
-nursehome <- as.numeric(do.call("rbind", sapply("nurshome.csv", read.csv)))
+nursehome <- read.csv("~/bio-informatics/Bio-stats HW 1/nurshome.csv")
 summary(nursehome)
-plot(nursehome, main="Point Plot of nursehome data")
-hist(nursehome, main="Histogram of nursehome data")
-boxplot(nursehome, main="Boxplot of nursehome data")
+plot(nursehome$resident, main="Point Plot of nursehome data")
+hist(nursehome$resident, main="Histogram of nursehome data")
+boxplot(nursehome$resident, main="Boxplot of nursehome data")
 
 # Cut nursehome data into intervals, 10 wide per interval then plot histogram
-nursehome_interval <- cut(nursehome, 10)
+nursehome_interval <- cut(nursehome$resident, 10)
 plot(nursehome_interval, xlab="Intervals", ylab="Count in Interval",
      main="Nursehome Data in 10 Intervals")
 
 # Get a table of the relative frequencies
-nursehome_rl_freq <- table(nursehome_interval)
-nursehome_rl_freq
+nursehome_rf <- table(nursehome_interval)
+nursehome_rf
+
