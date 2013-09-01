@@ -41,3 +41,26 @@ meanbrt <- mean(birth_rate$birthrt)
 meanbrt
 medianbrt <- median(birth_rate$birthrt)
 medianbrt
+
+# 5% trimmed mean
+mean(birth_rate$birthrt, trim=0.05)
+
+# 13 
+cigarette_data <- read.csv("~/bio-informatics/Bio-stats HW 1/cigarett.csv")
+mean_nicotine <- mean(cigarette_data$nicotine)
+mean_nicotine
+
+median_nicotine <- median(cigarette_data$nicotine)
+median_nicotine
+
+# histogram of nicotine levels
+hist_nicotine <- hist(cigarette_data$nicotine)
+
+# 14 use the file ischemic that came with the text and look at var sbp
+# systolic blood pressure
+sbp <- read.csv("~/bio-informatics/Bio-stats HW 1/ischemic.csv")
+mean(sbp$sbp)
+sd(sbp$sbp)
+
+# 15 lowbwt 
+lowbwt_data <- read.csv("~/bio-informatics/Bio-stats HW 1/lowbwt_data.csv")
