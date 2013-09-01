@@ -9,3 +9,5 @@ hist(serzinc, main="Histogram of serzinc data")
 serzinc_interval <- cut(serzinc, 10)
 plot(serzinc_interval, xlab='Intervals', ylab="Count in Interval", 
      main="Serzinc Data in 10 Intervals")
+rel_freq <- table(serzinc_interval)
+rel_freq
