@@ -4,3 +4,7 @@ serzinc <- as.numeric(do.call("rbind", sapply("serzinc.csv", read.csv)))
 summary(serzinc)
 plot(serzinc, main="Point Plot of serzinc data")
 hist(serzinc, main="Histogram of serzinc data")
+
+# Cut serzinc data into intervals, 10 points per interval and then plot the histogram
+serzinc_interval <- cut(serzinc, 10)
+hist(serzinc_interval)
