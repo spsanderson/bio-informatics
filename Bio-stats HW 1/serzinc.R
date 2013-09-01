@@ -21,6 +21,7 @@ lowbwt <- as.numeric(do.call("rbind", sapply("lowbwt.csv", read.csv)))
 summary(lowbwt)
 plot(lowbwt, main="Point Plot of lowbwt data")
 hist(lowbwt, main="Histogram of lowbwt data")
+boxplot(lowbwt, main="Boxplot of lowbwt data")
 
 # Cut lowbwt data into intervals, 10 wide per interval then plot histogram
 lowbwt_interval <- cut(lowbwt, 10)
