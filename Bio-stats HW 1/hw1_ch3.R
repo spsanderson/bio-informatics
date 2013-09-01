@@ -62,5 +62,5 @@ sbp <- read.csv("~/bio-informatics/Bio-stats HW 1/ischemic.csv")
 mean(sbp$sbp)
 sd(sbp$sbp)
 
-# 15 lowbwt 
+# 15 lowbwt sex is binary 1 = male and 0 = female
 lowbwt_data <- read.csv("~/bio-informatics/Bio-stats HW 1/lowbwt_data.csv")
