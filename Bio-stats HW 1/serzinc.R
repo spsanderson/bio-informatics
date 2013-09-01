@@ -7,4 +7,5 @@ hist(serzinc, main="Histogram of serzinc data")
 
 # Cut serzinc data into intervals, 10 points per interval and then plot the histogram
 serzinc_interval <- cut(serzinc, 10)
-plot(serzinc_interval)
+plot(serzinc_interval, xlab='Intervals', ylab="Count in Interval", 
+     main="Serzinc Data in 10 Intervals")
