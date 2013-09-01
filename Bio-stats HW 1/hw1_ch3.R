@@ -34,3 +34,10 @@ IQR
 rng
 ci2
 ci3
+
+# 12
+birth_rate <- read.csv("~/bio-informatics/Bio-stats HW 1/brate.csv")
+meanbrt <- mean(birth_rate$birthrt)
+meanbrt
+medianbrt <- median(birth_rate$birthrt)
+medianbrt
