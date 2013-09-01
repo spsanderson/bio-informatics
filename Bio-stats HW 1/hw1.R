@@ -51,7 +51,7 @@ plot(nursehome_interval, xlab="Intervals", ylab="Count in Interval",
 # Get a table of the relative frequencies
 nursehome_rf <- table(nursehome_interval)
 nursehome_rf
-max(nursehome)
+max(nursehome$resident)
 
 # 19 use data set called cigarett, work with vars tar and nicotine
 cigarette <- read.csv("~/bio-informatics/Bio-stats HW 1/cigarett.csv")
@@ -79,3 +79,12 @@ plot(nicotine_interval, xlab="Intervals", ylab="Count In Interval",
      main="Histogram of Nicotine Interval Data")
 plot(cigarette$tar ~ cigarette$nicotine, xlab="Nicotine Level", ylab="Tar Level", 
      main="Two-Way Scatter Plot of Tar ~ Nicotine Data")
+
+# 20 User brate file with variables year and birthrt
+brate <- read.csv("~/bio-informatics/Bio-stats HW 1/brate.csv")
+summary(brate)
+
+# Plot of birth rate data for unmarried women between ages of 15 and 44
+plot(brate, xlab="Year", ylab="Birth Rate/1000", main="Birth Rate by Year for Unmarried
+ Women between 15 and 44 Years Old")
+
