@@ -54,7 +54,7 @@ median_nicotine <- median(cigarette_data$nicotine)
 median_nicotine
 
 # histogram of nicotine levels
-hist_nicotine <- hist(cigarette_data$nicotine)
+hist_nicotine <- hist(cigarette_data$nicotine, main="Histogram of Nicotine Data")
 
 # 14 use the file ischemic that came with the text and look at var sbp
 # systolic blood pressure
@@ -64,3 +64,6 @@ sd(sbp$sbp)
 
 # 15 lowbwt sex is binary 1 = male and 0 = female
 lowbwt_data <- read.csv("~/bio-informatics/Bio-stats HW 1/lowbwt_data.csv")
+boxplot(lowbwt_data$sbp ~ lowbwt_data$sex, xlab="0 = Female, 1 = Male", 
+        ylab="Systolic Blood Pressure", 
+        main="Box plot of Female vs. Male Systolic Blood Pressure")
