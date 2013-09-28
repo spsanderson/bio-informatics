@@ -12,6 +12,7 @@ omspec
 # Plot the points
 rocplot = plot(omspec,sensitivity, xlab = '1-Specificity',
                ylab = 'Sensitivity', main = 'ROC Curve')
+lines(omspec,sensitivity,type="c")
 abline(h = 0.9625, v = 0.0575)
 abline(h = 0.9525, v = 0.0475)
 text(0.038,0.95,"0.9525")
