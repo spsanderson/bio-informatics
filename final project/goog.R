@@ -141,7 +141,7 @@ ylim <- range(0, densgadj$y)
 googCol <- rgb(1,0,0,0.2)
 ## plot the carrots and set up most of the plot parameters
 plot(densgadj, xlim = xlim, ylim = ylim, xlab = 'Daily Returns',
-     main = 'Distribution of GOOG and MSFT Daily Returns', 
+     main = 'Distribution of GOOG', 
      panel.first = grid())
 #put our density plots in
 polygon(densgadj, density = -1, col = googCol)
