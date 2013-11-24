@@ -49,3 +49,7 @@ hist(dlyrtmsft)
 hist(logrtgoog)
 hist(logrtmsft)
 
+cor(goog, msft)
+
+t.test(goog$GOOG.Adjusted)
+t.test(msft$MSFT.Adjusted)
