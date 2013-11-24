@@ -2,6 +2,12 @@ require(quantmod)
 getSymbols("GOOG")
 goog <- GOOG[from = '2013-01-01', to = '2013-11-22']
 head(goog)
+
+mean(dlyrt)
+sd(dlyrt)
+var(dlyrt)
+summary(dlyrt)
+
 plot(goog$GOOG.Adjusted)
 chartSeries(goog)
 
@@ -12,4 +18,3 @@ plot(logrt)
 
 hist(dlyrt)
 hist(logrt)
-
