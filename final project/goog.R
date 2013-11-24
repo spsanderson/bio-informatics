@@ -87,11 +87,24 @@ legend('topleft',c('GOOG','MSFT'),
        fill = c(googCol, msftCol), bty = 'n',
        border = NA)
 
-logrtgoog
-logrtmsft
-
 p1 <- hist(logrtgoog)
 p2 <- hist(logrtmsft)
 plot( p1, col=rgb(0,0,1,1/4), xlim=c(-12,3), xlab = "Log Returns"
       , main = "Histogram of Log Returns for Google and Microsoft")
 plot( p2, col=rgb(1,0,0,1/4), xlim=c(-12,3), add=T)
+
+# Read in .csv files
+goog.csv <- read.csv("GOOG.csv")
+msft.csv <- read.csv("MSFT.csv")
+googadj <- goog.csv$Adj.Close
+msftadj <- msft.csv$Adj.Close
+gx <- 1:227
+mx <- 1:227
+
+googlm <- lm(googadj ~ gx)
+msftlm <- lm(msftadj ~ mx)
+
+plot(googadj)
+abline(googlm)
+plot(msftadj)
+abline(msftlm)
