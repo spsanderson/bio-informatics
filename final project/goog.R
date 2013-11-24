@@ -5,4 +5,11 @@ head(goog)
 plot(goog$GOOG.Adjusted)
 chartSeries(goog)
 
-dlyrt <- 
+dlyrt <- dailyReturn(goog)
+plot(dlyrt)
+logrt <- log(dlyrt)
+plot(logrt)
+
+hist(dlyrt)
+hist(logrt)
+
