@@ -12,6 +12,8 @@ head(msft)
 
 summary(goog)
 summary(msft)
+IQR(goog)
+IQR(msft)
 
 meangadj <- mean(goog$GOOG.Adjusted)
 sdgadj <- sd(goog$GOOG.Adjusted)
