@@ -104,7 +104,9 @@ mx <- 1:227
 googlm <- lm(googadj ~ gx)
 msftlm <- lm(msftadj ~ mx)
 
-plot(googadj)
+plot(googadj, xlab = "Jan 2013 to Nov 2013", ylab = "Price", 
+     main = "Google Adjusted Close Year 2013 with Trend Line")
 abline(googlm)
-plot(msftadj)
+plot(msftadj, xlab = "Jan 2013 to Nov 2013", ylab = "Price",
+     main = "Microsoft Adjusted Close Year 2013 with Trend Line")
 abline(msftlm)
