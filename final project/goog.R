@@ -107,8 +107,25 @@ googlm <- lm(googadj ~ gx)
 msftlm <- lm(msftadj ~ mx)
 
 plot(googadj, xlab = "Jan 2013 to Nov 2013", ylab = "Price", 
-     main = "Google Adjusted Close Year 2013 with Trend Line")
+     main = "Google Adjusted Close Year 2013 with Trend Line", type="l")
 abline(googlm)
 plot(msftadj, xlab = "Jan 2013 to Nov 2013", ylab = "Price",
-     main = "Microsoft Adjusted Close Year 2013 with Trend Line")
+     main = "Microsoft Adjusted Close Year 2013 with Trend Line", type="l")
 abline(msftlm)
+
+densgadj <- density(googadj)
+## calculate the range of the graph
+xlim <- range(densgadj$x)
+ylim <- range(0, densgadj$y)
+#pick the colours
+googCol <- rgb(1,0,0,0.2)
+## plot the carrots and set up most of the plot parameters
+plot(densgadj, xlim = xlim, ylim = ylim, xlab = 'Daily Returns',
+     main = 'Distribution of GOOG and MSFT Daily Returns', 
+     panel.first = grid())
+#put our density plots in
+polygon(densgadj, density = -1, col = googCol)
+## add a legend in the corner
+legend('topleft',c('GOOG'),
+       fill = c(googCol), bty = 'n',
+       border = NA)
