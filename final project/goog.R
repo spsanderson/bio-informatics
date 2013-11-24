@@ -1,20 +1,29 @@
+# Load and require desired packages
 require(quantmod)
 require(ggplot2)
 require(knitr)
+
+# Get data for Google and Microsoft
 getSymbols("GOOG")
 getSymbols("MSFT")
 
-goog <- GOOG[from = '2013-01-01', to = '2013-11-22']
-msft <- MSFT[from = '2013-01-01', to = '2013-11-22']
+# Place the OHLCV data for Google and Microsoft into objects
+goog <- GOOG
+msft <- MSFT
 
+# Get minor view of what is in each object
 head(goog)
 head(msft)
 
+# Get the summary data for each object
 summary(goog)
 summary(msft)
+
+# Get the IQR of each security
 IQR(goog)
 IQR(msft)
 
+# Get the mean, standard deviation and variance of Google and Microsoft
 meangadj <- mean(goog$GOOG.Adjusted)
 sdgadj <- sd(goog$GOOG.Adjusted)
 vargadj <- var(goog$GOOG.Adjusted)
@@ -29,11 +38,14 @@ meanmadj
 sdmadj
 varmadj
 
+# Plot the adjusted close of Google and Microsoft
 plot(goog$GOOG.Adjusted)
 plot(msft$MSFT.Adjusted)
 chartSeries(goog)
 chartSeries(msft)
 
+# Get the daily returns for Google and Microsoft
+# get their corresponding means, standard deviations and variance
 dlyrtgoog <- dailyReturn(goog)
 mean(dlyrtgoog)
 sd(dlyrtgoog)
@@ -43,26 +55,34 @@ mean(dlyrtmsft)
 sd(dlyrtmsft)
 var(dlyrtmsft)
 
+# Plot the daily returns of Google and Microsoft
 plot(dlyrtgoog)
 plot(dlyrtmsft)
 
+# Get the log of the daily returns
 logrtgoog <- log(dlyrtgoog)
 logrtmsft <- log(dlyrtmsft)
 
+# Plot the log of the daily returns
 plot(logrtgoog)
 plot(logrtmsft)
 
+# Get a histogram of the daily returns of Google and Microsoft
 hist(dlyrtgoog)
 hist(dlyrtmsft)
 
+# Get a histogram of the log of daily returns of Google and Microsoft
 hist(logrtgoog)
 hist(logrtmsft)
 
+# Get a correlation matrix of Google v Microsoft
 cor(goog, msft)
 
+# Perform a simple t.test of the mean = 0 for Google and Microsoft Adjusted Close
 t.test(goog$GOOG.Adjusted)
 t.test(msft$MSFT.Adjusted)
 
+# Plotting the histograms of daily returns of Google and Microsoft on the same graph
 p1 <- hist(dlyrtgoog)
 p2 <- hist(dlyrtmsft)
 plot( p1, col=rgb(0,0,1,1/4), xlim=c(-.2,.3))
