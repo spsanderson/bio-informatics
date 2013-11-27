@@ -75,9 +75,6 @@ hist(dlyrtmsft)
 hist(logrtgoog)
 hist(logrtmsft)
 
-# Get a correlation matrix of Google v Microsoft
-cor(goog, msft)
-
 # Perform a simple t.test of the mean = 0 for Google and Microsoft Adjusted Close
 t.test(goog$GOOG.Adjusted)
 t.test(msft$MSFT.Adjusted)
@@ -122,6 +119,9 @@ googadj <- goog.csv$Adj.Close
 msftadj <- msft.csv$Adj.Close
 gx <- 1:227
 mx <- 1:227
+
+# Get a correlation matrix of Google v Microsoft
+cor(googadj, msftadj)
 
 googlm <- lm(googadj ~ gx)
 msftlm <- lm(msftadj ~ mx)
