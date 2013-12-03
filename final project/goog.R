@@ -79,6 +79,11 @@ hist(logrtmsft)
 t.test(goog$GOOG.Adjusted)
 t.test(msft$MSFT.Adjusted)
 
+# Performa a simple t.test of the Daily Return objects for MSFT and GOOG
+t.test(dlyrtgoog, dlyrtmsft, paired=T, alternative="two.sided")
+t.test(dlyrtgoog, dlyrtmsft, paired=T, alternative="greater")
+t.test(dlyrtgoog, dlyrtmsft, paired=T, alternative="less")
+
 # Plotting the histograms of daily returns of Google and Microsoft on the same graph
 p1 <- hist(dlyrtgoog)
 p2 <- hist(dlyrtmsft)
